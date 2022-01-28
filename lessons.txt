@@ -1,0 +1,4 @@
+- Deployment to Vercel
+- react-scroll: scrolls to page section on clicking link
+- rc-drawer: creates a mobile drawer
+- react-custom-scrollbars: provies native-like scrolling experience

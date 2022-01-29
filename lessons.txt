@@ -1,4 +1,7 @@
 - Deployment to Vercel
+- theme-ui: used for creating themeable user interfaces based on constraint-based design principles.
 - react-scroll: scrolls to page section on clicking link
 - rc-drawer: creates a mobile drawer
 - react-custom-scrollbars: provies native-like scrolling experience
+- react-modal-video: creates video modals. (can be impleemented using an HTML iframe)
+- react-multi-carousel: used for making carousels.

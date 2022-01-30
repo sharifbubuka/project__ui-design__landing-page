@@ -90,7 +90,10 @@ export default function ServiceSection() {
         </Box>
       </Container>
       <Modal isOpen={videoOpen} onClose={handleClose}>
-        <Embed src="https://www.youtube.com/embed/ZNA9rmDsYVE" />
+        <Embed
+          src="https://www.youtube.com/embed/ZNA9rmDsYVE?autoplay=1"
+          allow="autoplay"
+        />
       </Modal>
     </section>
   );

@@ -9,9 +9,11 @@ import {
   Heading,
   Button,
   Image,
+  Embed,
 } from "theme-ui";
 import { keyframes } from "@emotion/core";
 import TextFeature from "components/text-feature";
+import Modal from "components/modal";
 import ModalVideo from "react-modal-video";
 import { IoIosPlay } from "react-icons/io";
 
@@ -30,28 +32,26 @@ const data = {
       imgSrc: Smart,
       altText: "Smart Features",
       title: "Smart Features",
-      text:
-        "Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.",
+      text: "Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.",
     },
     {
       id: 2,
       imgSrc: Secure,
       altText: "Secure Contents",
       title: "Secure Contents",
-      text:
-        "Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.",
+      text: "Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.",
     },
   ],
 };
 
 export default function ServiceSection() {
-  const [videoOpen, setVideoOpen] = useState(false)
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
   };
-
+  const handleClose = () => setVideoOpen(false);
   return (
     <section sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
@@ -73,9 +73,13 @@ export default function ServiceSection() {
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} />
           <Grid sx={styles.grid}>
-            {data.features.map(feature => (
+            {data.features.map((feature) => (
               <Box sx={styles.card} key={feature.id}>
-                <Image src={feature.imgSrc} alt={feature.altText} sx={styles.icon} />
+                <Image
+                  src={feature.imgSrc}
+                  alt={feature.altText}
+                  sx={styles.icon}
+                />
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
                   <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
@@ -85,12 +89,9 @@ export default function ServiceSection() {
           </Grid>
         </Box>
       </Container>
-      {/* <ModalVideo
-        channel="youtube"
-        isOpen={videoOpen}
-        videId="9Gxs6ZQcCpc"
-        onClose={() => setVideoOpen(false)} 
-      /> */}
+      <Modal isOpen={videoOpen} onClose={handleClose}>
+        <Embed src="https://www.youtube.com/embed/ZNA9rmDsYVE" />
+      </Modal>
     </section>
   );
 }
